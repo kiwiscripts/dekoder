@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <style> 
+
+        /* https://www.w3schools.com/css/css3_fonts.asp */
+
+        @font-face {
+           font-family: korps;
+           src: url(korps-font.ttf);
+        }
+        
+        #inputtext {
+           font-family: korps;
+        }
+
+        .keyboard {
+           font-family: korps;
+        }        
+        </style>
+<head>
+
+    <link rel="stylesheet" href="milligram.min.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKK</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="column">
+                <h1>Kiwi Korps deKoder</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+
+                <!-- Keyboard table, one row with latin characters and one with korps -->
+    <table>
+        <tr>
+            <th>q</th>
+            <th>w</th>
+            <th>e</th>
+            <th>r</th>
+            <th>t</th>
+            <th>y</th>
+            <th>u</th>
+            <th>i</th>
+            <th>o</th>
+            <th>p</th>
+        </tr>
+        <tr>
+            <td><input class="keyboard" type="button" value="q"></td>
+            <td><input class="keyboard" type="button" value="w"></td>
+            <td><input class="keyboard" type="button" value="e"></td>
+            <td><input class="keyboard" type="button" value="r"></td>
+            <td><input class="keyboard" type="button" value="t"></td>
+            <td><input class="keyboard" type="button" value="y"></td>
+            <td><input class="keyboard" type="button" value="u"></td>
+            <td><input class="keyboard" type="button" value="i"></td>
+            <td><input class="keyboard" type="button" value="o"></td>
+            <td><input class="keyboard" type="button" value="p"></td>
+        </tr>
+        <tr>
+            <th>a</th>
+            <th>s</th>
+            <th>d</th>
+            <th>f</th>
+            <th>g</th>
+            <th>h</th>
+            <th>j</th>
+            <th>k</th>
+            <th>l</th>
+        </tr>
+        <tr>
+            <td><input class="keyboard" type="button" value="a"></td>
+            <td><input class="keyboard" type="button" value="s"></td>
+            <td><input class="keyboard" type="button" value="d"></td>
+            <td><input class="keyboard" type="button" value="f"></td>
+            <td><input class="keyboard" type="button" value="g"></td>
+            <td><input class="keyboard" type="button" value="h"></td>
+            <td><input class="keyboard" type="button" value="j"></td>
+            <td><input class="keyboard" type="button" value="k"></td>
+            <td><input class="keyboard" type="button" value="l"></td>
+        </tr>
+        <tr>
+            <th>z</th>
+            <th>x</th>
+            <th>c</th>
+            <th>v</th>
+            <th>b</th>
+            <th>n</th>
+            <th>m</th>
+        </tr>
+        <tr>
+            <td><input class="keyboard" type="button" value="z"></td>
+            <td><input class="keyboard" type="button" value="x"></td>
+            <td><input class="keyboard" type="button" value="c"></td>
+            <td><input class="keyboard" type="button" value="v"></td>
+            <td><input class="keyboard" type="button" value="b"></td>
+            <td><input class="keyboard" type="button" value="n"></td>
+            <td><input class="keyboard" type="button" value="m"></td>
+        </tr>
+        <tr>
+            <td colspan="5"></td>
+            <td colspan="1"><input class="keyboard" type="button" value=" "></td>
+            <td colspan="5"></td>
+        </tr>
+    </table>
+
+   </div>
+ </div>
+
+
+        <div class="row">
+
+            <div class="column">
+
+                <label for="inputtext">Write Korps here or type using the keyboard above</label>
+    <textarea id="inputtext" cols="30" rows="10"></textarea>
+
+            </div>
+
+            <div class="column">
+
+                <label for="outputtext">Decoded:</label>
+    <textarea id="outputtext" cols="30" rows="10"></textarea>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="columm">
+                <button id="clear">Clear</button>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    
+
+
+</body>
+
+<script>
+
+    function reverseString(str) {
+        return str.split("").reverse().join("");
+    }
+    
+    // Clear both textareas
+    clear.onclick = () => {
+        inputtext.value = '';
+        outputtext.value = '';
+    }
+
+
+    // Keyboard Listener
+    // https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
+    document.querySelectorAll('.keyboard').forEach(item => {
+    item.addEventListener('click', event => {
+            // console.log(item.value);
+            inputtext.value += item.value;
+            outputtext.value = reverseString(inputtext.value);
+        })
+    })
+
+</script>
+
+</html>
