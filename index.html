@@ -141,7 +141,15 @@
             </div>
         </div>
 
-    </div>
+	<div class="row">
+		    <div class="columm">
+		        <hr>
+			<h4>Changelog:</h4>
+			<p>06/15/2021 - Added listener to the inputtext textarea, now you can write directly on the left textarea.</p>
+		    </div>
+		</div>
+
+	    </div>
 
     
 
@@ -173,6 +181,11 @@
         })
     })
 
+    // Input Listener
+    // You can now "write" korps with your keyboard
+    inputtext.onkeyup = () => {
+        outputtext.value = reverseString(inputtext.value);
+    }
 </script>
 
 </html>
